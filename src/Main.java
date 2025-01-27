@@ -9,13 +9,13 @@ public class Main {
         System.out.printf("Сумма трат за месяц составила %s рублей%n", sumIncomeMonth);
         System.out.println("Task № 2");
         int[] incomeWeek = {2300, 2750, 3200, 2100, 2600};
-        int maxIncomeWeek = Integer.MAX_VALUE;
-        int minIncomeWeek = Integer.MIN_VALUE;
+        int maxIncomeWeek = Integer.MIN_VALUE;
+        int minIncomeWeek = Integer.MAX_VALUE;
         for (int i : incomeWeek) {
-            if (i > minIncomeWeek) {
+            if (i < minIncomeWeek) {
                 minIncomeWeek = i;
             }
-            if (i < maxIncomeWeek) {
+            if (i > maxIncomeWeek) {
                 maxIncomeWeek = i;
             }
         }
@@ -29,9 +29,19 @@ public class Main {
         double averageSpending = (double) sumSpending / spendingWeek.length;
         System.out.printf("Средняя сумма трат за месяц составила %S рублей%n", averageSpending);
         System.out.println("Task № 4");
-        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            System.out.print(reverseFullName[i]);
+        char temp;
+        char[] reverseFullName2 = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = 0; i < reverseFullName2.length / 2; i++) {
+            temp = reverseFullName2[i];
+            reverseFullName2[i] = reverseFullName2[reverseFullName2.length - 1 - i];
+            reverseFullName2[reverseFullName2.length - 1 - i] = temp;
+        }
+        for (int i = 0; i < reverseFullName2.length; i++) {
+            System.out.print(reverseFullName2[i]);
+            if (i == reverseFullName2.length - 2) {
+                System.out.println(reverseFullName2[i + 1]);
+                break;
+            }
         }
     }
 }
