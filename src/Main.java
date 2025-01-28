@@ -9,8 +9,8 @@ public class Main {
         System.out.printf("Сумма трат за месяц составила %s рублей%n", sumIncomeMonth);
         System.out.println("Task № 2");
         int[] incomeWeek = {2300, 2750, 3200, 2100, 2600};
-        int maxIncomeWeek = Integer.MIN_VALUE;
-        int minIncomeWeek = Integer.MAX_VALUE;
+        int maxIncomeWeek = incomeWeek[0];
+        int minIncomeWeek = incomeWeek[0];
         for (int i : incomeWeek) {
             if (i < minIncomeWeek) {
                 minIncomeWeek = i;
@@ -38,9 +38,8 @@ public class Main {
         }
         for (int i = 0; i < reverseFullName2.length; i++) {
             System.out.print(reverseFullName2[i]);
-            if (i == reverseFullName2.length - 2) {
-                System.out.println(reverseFullName2[i + 1]);
-                break;
+            if (i == reverseFullName2.length - 1) {
+                System.out.println(reverseFullName2[i]);
             }
         }
     }
